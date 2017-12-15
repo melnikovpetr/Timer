@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Timer", "Timer\Timer.vcxproj", "{A61F7C37-8A03-4C63-A6E3-655B15AB0432}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		win_debug|x64 = win_debug|x64
+		win_debug|x86 = win_debug|x86
+		win_release|x64 = win_release|x64
+		win_release|x86 = win_release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A61F7C37-8A03-4C63-A6E3-655B15AB0432}.win_debug|x64.ActiveCfg = win_debug|x64
+		{A61F7C37-8A03-4C63-A6E3-655B15AB0432}.win_debug|x64.Build.0 = win_debug|x64
+		{A61F7C37-8A03-4C63-A6E3-655B15AB0432}.win_debug|x86.ActiveCfg = win_debug|Win32
+		{A61F7C37-8A03-4C63-A6E3-655B15AB0432}.win_debug|x86.Build.0 = win_debug|Win32
+		{A61F7C37-8A03-4C63-A6E3-655B15AB0432}.win_release|x64.ActiveCfg = win_release|x64
+		{A61F7C37-8A03-4C63-A6E3-655B15AB0432}.win_release|x64.Build.0 = win_release|x64
+		{A61F7C37-8A03-4C63-A6E3-655B15AB0432}.win_release|x86.ActiveCfg = win_release|Win32
+		{A61F7C37-8A03-4C63-A6E3-655B15AB0432}.win_release|x86.Build.0 = win_release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

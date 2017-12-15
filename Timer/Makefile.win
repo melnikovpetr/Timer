@@ -1,0 +1,40 @@
+CC = cl
+CL = link
+
+debug: create_object_list
+	set LIBS=
+	set CFLAGS=-c -Zi -EHsc
+	set LFLAGS=-debug
+	@if not exist "$(OUTDIR)/" mkdir "$(OUTDIR)"
+	$(MAKE) -e -f Makefile.win $(OUTDIR)/$(TARGET).exe TARGET=$(OUTDIR)/$(TARGET).exe 
+
+release: create_object_list
+	set LIBS=
+	set CFLAGS=-c -O2 -EHsc
+	set LFLAGS=
+	@if not exist "$(OUTDIR)/" mkdir "$(OUTDIR)"
+	$(MAKE) -e -f Makefile.win $(OUTDIR)/$(TARGET).exe TARGET=$(OUTDIR)/$(TARGET).exe
+
+clean:
+	del "$(OUTDIR)" /F /Q /S
+	rmdir "$(OUTDIR)" /Q
+
+!IFNDEF OBJECT_LIST
+
+OBJECT_LIST = $(SOURCES:.cpp=.obj)
+
+create_object_list: init_object_list $(OBJECT_LIST)
+init_object_list: ;@set OBJECT_LIST=; 
+$(OBJECT_LIST): ;@set OBJECT_LIST=%%OBJECT_LIST%% $(OUTDIR)/$@
+
+!ELSE
+
+OBJECTS = $(OBJECT_LIST:; =)
+
+$(TARGET): $(OBJECTS)
+	$(CL) $(LFLAGS) $(OBJECTS) $(LIBS) -out:$@
+
+$(OBJECTS): $(@B).cpp $(HEADERS)
+	$(CC) $(CFLAGS) -Fd"$(OUTDIR)/" -Fo"$(OUTDIR)/" $(@B).cpp
+
+!ENDIF

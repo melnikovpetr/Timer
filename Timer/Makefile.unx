@@ -1,0 +1,26 @@
+CC = g++
+CL = g++
+
+export OBJECTS = $(addprefix $(OUTDIR)/,$(SOURCES:.cpp=.o))
+
+debug: export CFLAGS = -c -std=c++11 -Wall -g3 -pthread
+debug: export LFLAGS = -pthread -lpthread
+debug:
+	mkdir -p $(OUTDIR)
+	$(MAKE) -f Makefile.unx $(OUTDIR)/$(TARGET) TARGET="$(OUTDIR)/$(TARGET)"
+
+release: export CFLAGS = -c -std=c++11 -Wall -O3 -pthread
+release: export LFLAGS = -pthread -lpthread
+release:
+	mkdir -p $(OUTDIR)
+	$(MAKE) -f Makefile.unx $(OUTDIR)/$(TARGET) TARGET="$(OUTDIR)/$(TARGET)"
+
+clean:
+	rm -r $(OUTDIR)/
+
+$(TARGET): $(OBJECTS)
+	$(CL) $(LFLAGS) $(OBJECTS) -o $@
+
+
+$(OUTDIR)/%.o: %.cpp $(HEADERS)
+	$(CC) $(CFLAGS) $< -o $@
