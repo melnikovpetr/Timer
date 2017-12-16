@@ -28,7 +28,6 @@ void turnEchoOn()
 
 #else
 
-#include <stdio.h>
 #include <termios.h>
 #include <sys/ioctl.h>
 
