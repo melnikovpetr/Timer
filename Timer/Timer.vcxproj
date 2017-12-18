@@ -79,14 +79,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='win_debug|Win32'">
     <NMakeOutput>tmp\$(Configuration)\$(TargetName).exe</NMakeOutput>
     <NMakeBuildCommandLine>nmake $(Configuration)</NMakeBuildCommandLine>
-    <OutDir>.tmp\$(Configuration)\</OutDir>
-    <IntDir>.tmp\$(Configuration)\</IntDir>
+    <OutDir>tmp\$(Configuration)\</OutDir>
+    <IntDir>tmp\$(Configuration)\</IntDir>
     <NMakeCleanCommandLine>nmake $(Configuration)_clean</NMakeCleanCommandLine>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='win_release|Win32'">
     <NMakeOutput>tmp\$(Configuration)\$(TargetName).exe</NMakeOutput>
-    <OutDir>.tmp\$(Configuration)\</OutDir>
-    <IntDir>.tmp\$(Configuration)\</IntDir>
+    <OutDir>tmp\$(Configuration)\</OutDir>
+    <IntDir>tmp\$(Configuration)\</IntDir>
     <NMakeBuildCommandLine>nmake $(Configuration)</NMakeBuildCommandLine>
     <NMakeCleanCommandLine>nmake $(Configuration)_clean</NMakeCleanCommandLine>
   </PropertyGroup>
