@@ -4,6 +4,7 @@
 #include <thread>
 #include <condition_variable>
 
+// Test branch
 class Timer
 {
 public:
